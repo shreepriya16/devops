@@ -1,4 +1,5 @@
-name: Simple CI Pipeline
+#ci.yml is a yaml file(configuration file means setting or instructions for a file) instruction that tell automatically tell system what to do when u push code
+name: Simple CI Pipeline 
 
 on:
  push:
@@ -12,4 +13,4 @@ jobs:
    - name: Checkout repository    
      uses: actions/checkout@v3
    - name: Run a simple command
-     run: echo "This is my pipeline run"
+     run: echo "This is my ci.yml automated pipeline run"
