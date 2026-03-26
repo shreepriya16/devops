@@ -18,5 +18,5 @@ jobs:
      run: echo "This is my ci.yml automated pipeline run"
    - name: step 2
      run: echo "This is my second step"
-  -name: breaking step
-  run: echo "pipeline is fixed'"
+   - name: breaking step
+     run: echo "pipeline is fixed'"
