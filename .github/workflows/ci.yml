@@ -1,6 +1,9 @@
 #ci.yml is a yaml file(configuration file means setting or instructions for a file) instruction that tell automatically tell system what to do when u push code [yaml or yml both r same : yet another markup language] we use yaml file format coz it fits automation perfectly.
  #identation and spellings are vry imp doesnt get updated in workfloww
  #echo means print the text in terminal or command line interface
+ #building an simple CI(continuous integration) pipeline that will run automatically when we push code to main branch using github actions.
+ #virtual machine:A temporary cloud-based Linux system (Ubuntu) is automatically created by GitHub Actions to execute the CI pipeline steps, and it is deleted after execution
+ #GitHub Actions, when a workflow is triggered, GitHub automatically creates a temporary Ubuntu-based virtual machine (runner) in its cloud environment to execute the pipeline steps defined in the ci.yml file. ocz they cannot run on their own  they need a 
 name: Simple CI Pipeline 
 
 on:
