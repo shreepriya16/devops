@@ -16,6 +16,9 @@ on:
 jobs:
  build:
   runs-on: ubuntu-latest
+ permissions:
+  contents: read
+  packages: write
 
   steps:
    - name: Checkout repository    
@@ -26,3 +29,9 @@ jobs:
      run: echo "This is my second step"
    - name: breaking step
      run: echo "pipeline is fixed now"
+   - name: login to ghcr
+     run: echo "${{secrets.ghcr_demo}}" | docker login ghcr.io -u ${{github.actor}} --password-stdin
+   - name: build docker image
+     run: docker build -t ghcr.io/${{github.actor}}/devops-demo:v1 
+   - name: push docker image
+     run: docker push ghcr.io/${{github.actor}}/devops-demo:v1
