@@ -31,7 +31,7 @@ jobs:
    - name: breaking step
      run: echo "pipeline is fixed now"
    - name: login to ghcr
-     run: echo "${{ secrets.ghcr_demo }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+     run: echo "${{ secrets.SHREE_1645 }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
    - name: build a docker image
      run: docker build -t ghcr.io/${{ github.actor }}/devops:v1 .
