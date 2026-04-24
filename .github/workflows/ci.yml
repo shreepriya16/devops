@@ -23,7 +23,7 @@ jobs:
   steps:
    - name: Checkout repository    
      uses: actions/checkout@v3
-     
+
    - name: step 1
      run: echo "This is my ci.yml automated pipeline run"
    - name: step 2
@@ -31,8 +31,10 @@ jobs:
    - name: breaking step
      run: echo "pipeline is fixed now"
    - name: login to ghcr
-     run: echo "${{secrets.ghcr_demo}}" | docker login ghcr.io -u ${{github.actor}} --password-stdin
-   - name: build docker image
-     run: docker build -t ghcr.io/${{github.actor}}/devops-demo:v1 
-   - name: push docker image
-     run: docker push ghcr.io/${{github.actor}}/devops-demo:v1
+     run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+   - name: build a docker image
+     run: docker build -t ghcr.io/${{ github.actor }}/devops-demo:v1 .
+
+   - name: docker push
+     run: docker push ghcr.io/${{ github.actor }}/devops-demo:v1
